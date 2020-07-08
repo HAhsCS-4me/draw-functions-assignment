@@ -12,10 +12,13 @@ cnv.height = 600;
 
 //Draw platforms with various properties
 // function fillPlatform(x, y, w, h, ptfm1Color, ptfm2Color) { 
-//     //Draw two rectangles with location (x, y), size (w, h) - width of top platform does not change, and color (ptfm1Color and ptfm2Color)    
+//     //Draw two rectangles with location (x, y), size (w, h) - width of top of platform does not change, and color (ptfm1Color and ptfm2Color)  
+    
+//     //Top of platform 
 //     ctx.fillStyle = ptfm1Color; 
 //     ctx.fillRect(x, y, w, 10); 
 
+//     //Bottom of platform
 //     ctx.fillStyle = ptfm2Color; 
 //     ctx.fillRect(x, y + 10, w, h);
 // }
@@ -27,8 +30,8 @@ cnv.height = 600;
 
 
 // //Draw Stars with various properties 
-// function strokestars(x, y, w, h, lineThickness, color) {
-//     //Draw star with location (x, y) - the top point of stars, size (w, h), line width and color 
+// function strokeStar(x, y, w, h, lineThickness, color) {
+//     //Draw outlined star with location (x, y) - the top point of stars, size (w, h), line width (lineThickness), star color (color)
 //     ctx.lineWidth = lineThickness;
 //     ctx.strokeStyle = color;
 
@@ -42,10 +45,36 @@ cnv.height = 600;
 //     ctx.stroke(); 
 // }
 // //Drawing Stars 
-// strokestars(150, 100, 120, 150, '8', 'navy');
-// strokestars(200, 350, 300, 150, '15', 'lime');  
-// strokestars(470, 170, 35, 90, '3', 'cornflowerblue'); 
-// strokestars(650, 300, 200, 250, '11', 'darkmagenta'); 
+// strokeStar(150, 100, 120, 150, '8', 'navy');
+// strokeStar(200, 350, 300, 150, '15', 'lime');  
+// strokeStar(470, 170, 35, 90, '3', 'cornflowerblue'); 
+// strokeStar(650, 300, 200, 250, '11', 'darkmagenta'); 
 
 
-//Draw Bill CIpher with various properties: location, width, height, color, pupil direction, 
+//Draw Targets with various properties 
+// function strokeTarget(x, y, r, ringNum, lineThickness, color) {
+//     //Draw outlined target with with center (x, y), radius (r), number of rings (ringNum), line width (lineThickness), target color (color) 
+//     ctx.strokeStyle = color;
+//     ctx.lineWidth = lineThickness;
+
+//     //Draw outer target 
+//     ctx.beginPath();
+//     ctx.arc(x, y, r, 0, 2 * Math.PI);
+//     ctx.stroke();
+
+//     //Draw inner targets 
+//     let ringSpacing = r / ringNum;
+
+//     for (i = 1; i < ringNum; i ++) {
+//         r -= ringSpacing
+        
+//         ctx.beginPath();
+//         ctx.arc(x, y, r, 0, 2 * Math.PI);
+//         ctx.stroke();
+//     }
+// }
+// //Drawing Targets
+// strokeTarget(200, 100, 50, 10, 3, 'blue');
+// strokeTarget(300, 350, 100, 6, 10, 'tomato'); 
+// strokeTarget(600, 160, 150, 3, 15, 'seagreen'); 
+// strokeTarget(630, 450, 70, 9, 1, 'hotpink'); 
